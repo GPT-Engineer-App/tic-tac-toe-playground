@@ -63,20 +63,20 @@ const Index = () => {
 
   const Cell = ({ num }) => {
     return (
-      <Button h="20" w="20" colorScheme="teal" variant="outline" onClick={() => handleClick(num)} disabled={cells[num] !== ""}>
+      <Button h="20" w="20" colorScheme="teal" variant="outline" onClick={() => handleClick(num)} disabled={cells[num] !== ""} style={{ boxShadow: "5px 10px 10px rgba(0, 0, 0, 0.2)" }}>
         {cells[num] === "X" ? <img src="/cat.png" alt="Cat" /> : cells[num] === "O" ? <img src="/dog.png" alt="Dog" /> : null}
       </Button>
     );
   };
 
   return (
-    <VStack spacing={8}>
+    <VStack spacing={8} style={{ perspective: "1000px" }}>
       <Center>
         <Heading as="h1" size="2xl" my="4">
           Tic Tac Toe
         </Heading>
       </Center>
-      <Grid templateColumns="repeat(3, 1fr)" gap={6}>
+      <Grid templateColumns="repeat(3, 1fr)" gap={6} style={{ transform: "rotateX(45deg) rotateZ(0deg)", transformStyle: "preserve-3d" }}>
         {Array(9)
           .fill()
           .map((_, i) => (
