@@ -63,8 +63,8 @@ const Index = () => {
 
   const Cell = ({ num }) => {
     return (
-      <Button h="20" w="20" fontSize="3xl" colorScheme="teal" variant="outline" onClick={() => handleClick(num)} disabled={cells[num] !== ""}>
-        {cells[num]}
+      <Button h="20" w="20" colorScheme="teal" variant="outline" onClick={() => handleClick(num)} disabled={cells[num] !== ""}>
+        {cells[num] === "X" ? <img src="/cat.png" alt="Cat" /> : cells[num] === "O" ? <img src="/dog.png" alt="Dog" /> : null}
       </Button>
     );
   };
